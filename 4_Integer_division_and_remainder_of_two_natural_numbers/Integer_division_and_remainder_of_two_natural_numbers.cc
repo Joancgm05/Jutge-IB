@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 int main() {
   int dividendo, divisor;
   std::cin >> dividendo >> divisor;
@@ -7,6 +8,11 @@ int main() {
     std::cerr << "El divisor tiene que ser mayor que 0" << '\n';
     return 1;
   }
-  std::cout << dividendo / divisor << " " << dividendo % divisor << '\n';
+  int resto {dividendo % divisor};
+
+  if (resto < 0){
+    resto = resto * (-1);
+  }
+  std::cout << dividendo / divisor << " " << resto << '\n';
   return 0;
 }
