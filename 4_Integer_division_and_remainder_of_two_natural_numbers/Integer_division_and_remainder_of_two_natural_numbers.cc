@@ -9,10 +9,8 @@ int main() {
     return 1;
   }
   int resto {dividendo % divisor};
-
-  if (resto < 0){
-    resto = resto * (-1);
-  }
-  std::cout << dividendo / divisor << " " << resto << '\n';
+  int cociente {dividendo / divisor};
+  
+  std::cout << cociente << " " << resto << '\n';
   return 0;
 }
