@@ -2,7 +2,8 @@
 
 
 int main() {
-  long long dividendo, divisor;
+  long long dividendo;
+  unsigned int divisor;
   std::cin >> dividendo >> divisor;
   if (divisor < 1) {
     std::cerr << "El divisor tiene que ser mayor que 0" << '\n';
@@ -10,7 +11,7 @@ int main() {
   }
   long long resto {dividendo % divisor};
   long long cociente {dividendo / divisor};
-
+/*
   int i{0};
   if (cociente < 0) {
     do {
@@ -19,7 +20,13 @@ int main() {
     } while ((cociente * divisor) > dividendo);
         resto = dividendo - (cociente * divisor);
   }
-  
+  */
+  if (cociente < 0) {
+    for (int i{0}; ((cociente * divisor) > dividendo); --i) {
+      cociente = cociente + i;
+      resto = dividendo - (cociente * divisor);
+    }
+  }
   std::cout << cociente << " " << resto << '\n';
   return 0;
 }   
